@@ -1,0 +1,3 @@
+*)Update system packages first
+
+sudo apt-get update -y && sudo apt-get upgrade -y
