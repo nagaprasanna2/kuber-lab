@@ -1,3 +1,5 @@
 *)Update system packages first
 
 sudo apt-get update -y && sudo apt-get upgrade -y
+*)Install required base tools
+sudo apt-get install -y curl wget unzip tar git jq
