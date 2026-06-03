@@ -1,5 +1,27 @@
+01)Prerequisites & EC2 Setup
+Prerequisites & EC2 Setup
 *)Update system packages first
-
 sudo apt-get update -y && sudo apt-get upgrade -y
 *)Install required base tools
 sudo apt-get install -y curl wget unzip tar git jq
+2)Install AWS CLI v2
+apt install awscli
+*)Verify AWS CLI installation
+aws --version
+4)Install kubectl
+KUBECTL_VERSION=$(curl -sL https://dl.k8s.io/release/stable.txt)
+curl -LO "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/kubectl
+*)Verify kubectl
+kubectl version --client
+5)Install eksctl
+
+curl --silent --location \
+  "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" \
+  | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+eksctl version
+6)aws configure
+
+
